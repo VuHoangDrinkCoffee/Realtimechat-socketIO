@@ -19,7 +19,7 @@ io.on('connection', function(socket){
 
     socket.on('Client-send-data', (data) =>{
         console.log(socket.id + ' sending ' + data)
-        io.sockets.emit('Server-send-data', data + ' sent')
+        io.sockets.emit('Server-send-data', data)
     })
 });
 
