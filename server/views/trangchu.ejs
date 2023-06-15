@@ -1,30 +1,10 @@
 <html>
-
 <head>
   <title>Demo SocketIo</title>
-  <script src="https://code.jquery.com/jquery-latest.js"></script>
-  <script src="socket.io/socket.io.js"></script>
-  <script>
-    var socket = io("http://localhost:3000/");
-
-    socket.on('Server-send-data', (data) => {
-      $('#test').append(socket.id + ' send ' + data)
-    })
-    $(document).ready(function () {
-      $("#mrA").click(function () {
-        const userInput = $("#text").val();
-
-        socket.emit('Client-send-data', userInput)
-      });
-    });
-
-  </script>
+  <script src="/script.js"></script>
+  <link rel="stylesheet" type="text/css" href="/server/public/layout/layout.css">
 </head>
-
 <body>
-  <div id="mrA">click</div>
-  <div id="test"></div>
-  <input id="text"></input>
+  hi
 </body>
-
 </html>
