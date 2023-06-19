@@ -1,3 +1,49 @@
 body{
-    background-color: red;
+    background-color: #c9b7b0;
+}
+#txtUsername{
+    background-color: #6C6F70;
+    border: 1px solid black;
+}
+#warpper{
+    width: 600px;
+    margin: auto;
+}
+#left{
+    width: 200px;
+    float: left;
+    background-color: #c7d290;
+}
+#right{
+    width: 398px;
+    float: right;
+    background-color: #94993f;
+}
+#boxTittle{
+    height: 20px;
+    padding: 5px;
+    text-align: center;
+    background-color: #94993f;
+}
+.userOnline{
+    text-align: center;
+    padding: 5px;
+    padding-top: none;
+}
+#sayHi{
+    padding: 5px;
+    text-align: right;
+}
+#bthLogout  {
+    width: 65px;
+    padding: right;
+    text-align: center;
+    display: inline-block;
+}
+#left{
+    border: 1px solid black;
+}
+#listMessages{
+    background-color: antiquewhite;
+    height: 300px;
 }

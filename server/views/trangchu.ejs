@@ -1,10 +1,38 @@
 <html>
-<head>
-  <title>Demo SocketIo</title>
-  <script src="/script.js"></script>
-  <link rel="stylesheet" type="text/css" href="/server/public/layout/layout.css">
-</head>
-<body>
-  hi
-</body>
+  <head>
+    <title>Demo Socket.io</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/scripts/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/layout.css" />
+  </head>
+  <body>
+    <div id="warpper">
+      <div class="loginForm">
+        <h3>Enter name:</h3>
+        <input type="text" id="txtUsername" />
+        <input type="button" value="register" id="btnRegister" />
+      </div>
+      <div class="chatForm">
+        <div id="left">
+          <div id="boxTittle">User Online</div>
+          <div id="boxContent">
+            <div class="userOnline">Le Van A</div>
+            <div class="userOnline">Nguyen Van A</div>
+            <div class="userOnline">Le Van B</div>
+          </div>
+        </div>
+        <div id="right">
+          <div id="sayHi">
+            Hello <span id="currenUser">Vu</span>
+            <input id="bthLogout" value="Log Out" type="text" />
+          </div>
+          <div id="listMessages"></div>
+
+          <input type="input" id="txtMessages"/>
+          <input type="button" value="Send" id="btnSubmit"/>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
