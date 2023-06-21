@@ -1,36 +1,40 @@
 <html>
-  <head>
-    <title>Demo Socket.io</title>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/scripts/script.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/layout.css" />
-  </head>
-  <body>
-    <div id="warpper">
-      <div class="loginForm">
-        <h3>Enter name:</h3>
-        <input type="text" id="txtUsername" />
-        <input type="button" value="register" id="btnRegister" />
+
+<head>
+  <title>Demo Socket.io</title>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/scripts/script.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/layout.css" />
+</head>
+
+<body>
+  <div id="warpper">
+    <div class="loginForm">
+      <h3>Enter name:</h3>
+      <input type="text" id="txtUsername" />
+      <input type="button" value="register" id="btnRegister" />
+    </div>
+    <div class="chatForm">
+      <div id="left">
+        <div id="boxTittle">User Online</div>
+        <div id="boxContent">
+
+        </div>
       </div>
-      <div class="chatForm">
-        <div id="left">
-          <div id="boxTittle">User Online</div>
-          <div id="boxContent">
-
-          </div>
+      <div id="right">
+        <div id="sayHi">
+          Hello <span id="currenUser">Vu</span>
+          <input id="bthLogout" value="Log Out" type="button" />
         </div>
-        <div id="right">
-          <div id="sayHi">
-            Hello <span id="currenUser">Vu</span>
-            <input id="bthLogout" value="Log Out" type="text" />
-          </div>
-          <div id="listMessages"></div>
-
-          <input type="input" id="txtMessages"/>
-          <input type="button" value="Send" id="btnSubmit"/>
+        <div id="listMessages">
+        <div id="noti"></div>
         </div>
+        <input type="input" id="txtMessages" />
+        <input type="button" value="Send" id="btnSubmit" />
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
