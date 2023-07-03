@@ -9,33 +9,20 @@ app.use(express.static("public"));
 app.use("/public", express.static("public"));
 server.listen(3000);
 
-var userOnline = [];
-
 io.on("connection", (socket) => {
-  console.log(socket.id + " connected");
-  socket.on("client-send-userName", (data) => {
-    if (userOnline.includes(data) >= 1) {
-      socket.emit("user-send-failed");
-    } else {
-      userOnline.push(data);
-      socket.Username = data;
-      socket.emit("user-send-succes", data);
-      io.sockets.emit("sever-send-onlineUser", userOnline);
+  socket.on("room-created", (data) =>{
+    socket.join(data);
+    socket.phong = data;
+
+    var roomList = [];
+    for(r in socket.adapter.rooms){
+      roomList.push(r);
     }
-    socket.on("logout", () => {
-      userOnline.splice(userOnline.indexOf(socket.Username), 1);
-      socket.broadcast.emit("sever-send-onlineUser", userOnline);
-    });
-  });
-  socket.on("user-send-messages", (data) => {
-    io.sockets.emit("server-send-messages", { un: socket.Username, nd: data });
-  });
-  socket.on('typing-by-user', () =>{
-    var s = 'Typing by ' + socket.Username;
-    socket.broadcast.emit('typing-by-someones', s)
-  })
-  socket.on('stop-typing-by-user', () =>{
-    socket.broadcast.emit('stop-typing-by-someones')
+    io.sockets.emit("server-send-room-list", roomList)
+
+    socket.on("user-send-message", (data) =>{
+      io.sockets.in(socket.phong).emit("server-send-message", data)
+    })
   })
 });
 app.get("/", function (req, res) {

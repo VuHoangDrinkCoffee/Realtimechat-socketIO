@@ -11,24 +11,27 @@
 <body>
   <div id="warpper">
     <div class="loginForm">
-      <h3>Enter name:</h3>
-      <input type="text" id="txtUsername" />
-      <input type="button" value="register" id="btnRegister" />
+      <div class="roomForm">
+        <input type="text" id="txtRoomInput">
+        <input type="button" value="Create/Join Room" id="btnCreateRoom">
+      </div>
     </div>
+    
     <div class="chatForm">
       <div id="left">
-        <div id="boxTittle">User Online</div>
+        <div id="boxTittle">Rooms:</div>
         <div id="boxContent">
-
         </div>
       </div>
       <div id="right">
+        <div class="roomId">Room <span id="currentRoom">null</span>
+        </div>
         <div id="sayHi">
-          Hello <span id="currenUser">Vu</span>
-          <input id="bthLogout" value="Log Out" type="button" />
+          Hello <span id="currentUser">Vu</span>
+          <input id="btnLogout" value="Log Out" type="button" />
         </div>
         <div id="listMessages">
-        <div id="noti"></div>
+          <div id="noti"></div>
         </div>
         <input type="input" id="txtMessages" />
         <input type="button" value="Send" id="btnSubmit" />
